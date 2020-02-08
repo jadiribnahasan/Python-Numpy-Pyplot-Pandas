@@ -1,3 +1,5 @@
+
+
 from matplotlib import pyplot as plt
 import numpy as np
 import math as math
@@ -12,19 +14,16 @@ def monteCarloPi(trials, radius):
         distance = math.sqrt(xr**2 + yr**2)
         if(distance <= radius):
             hits += 1
-            plt.plot(xr, yr, 'go')
-        else:
-            plt.plot(xr, yr, 'ro')
 
     pi = (hits/trials)*4
 
-    xv = np.linspace(0, radius, 100)
-    yv = np.sqrt(radius**2 - xv**2)
-
-    plt.plot(xv, yv)
-    plt.title(f'pi = {pi}')
-    plt.show()
     return pi
 
 
-print(monteCarloPi(1000, 2.5))  # Increase trials for accurate value of pi
+for x in range(1, 1000):
+    d = ((3.14159-monteCarloPi(x, 2.5)))
+    xp = [x]*20
+    yp = np.linspace(0, d, 20)
+    plt.plot(xp, yp)
+
+plt.show()

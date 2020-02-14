@@ -1,6 +1,8 @@
 from matplotlib import pyplot as plt
 import numpy as np
 
+plt.style.use('grayscale')
+
 times = np.linspace(0, np.pi*2, 100)  # get x value of the sinewave
 times = np.arange(0, np.pi*2, 0.1)  # alternative of getting x's by linespace
 

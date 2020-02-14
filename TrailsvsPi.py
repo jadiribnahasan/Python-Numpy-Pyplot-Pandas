@@ -5,6 +5,8 @@ import numpy as np
 import math as math
 import random as rand
 
+plt.style.use('fivethirtyeight')
+
 
 def monteCarloPi(trials, radius):
     hits = 0
